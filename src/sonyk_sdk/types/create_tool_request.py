@@ -26,12 +26,6 @@ class CreateToolRequest(UniversalBaseModel):
     This should be a complete, accessible URL that accepts the specified HTTP method.
     """
 
-    tool_headers: typing.Optional[typing.Dict[str, str]] = pydantic.Field(default=None)
-    """
-    HTTP headers to include with all tool requests.
-    Common headers include Content-Type and Authorization.
-    """
-
     parameters: typing.Optional[typing.List[CreateToolParameterRequest]] = pydantic.Field(default=None)
     """
     Parameters that the tool accepts. Define all possible parameters

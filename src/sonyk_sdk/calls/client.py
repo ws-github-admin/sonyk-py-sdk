@@ -31,6 +31,8 @@ class CallsClient:
         *,
         agent_id: str,
         to_number: str,
+        twilio_sid: str,
+        twilio_token: str,
         variables: typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> CoreCallResponse:
@@ -45,6 +47,12 @@ class CallsClient:
 
         to_number : str
             Phone number to call (E.164 format)
+
+        twilio_sid : str
+            Twilio SID
+
+        twilio_token : str
+            Twilio Token
 
         variables : typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]]
             Optional JSON object containing custom variables to pass to the agent during the call
@@ -66,11 +74,18 @@ class CallsClient:
         )
         client.calls.initiate_call(
             agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-            to_number="+919831222222",
+            to_number="+xxxxxxxxxx",
+            twilio_sid="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            twilio_token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
         )
         """
         _response = self._raw_client.initiate_call(
-            agent_id=agent_id, to_number=to_number, variables=variables, request_options=request_options
+            agent_id=agent_id,
+            to_number=to_number,
+            twilio_sid=twilio_sid,
+            twilio_token=twilio_token,
+            variables=variables,
+            request_options=request_options,
         )
         return _response.data
 
@@ -95,6 +110,8 @@ class AsyncCallsClient:
         *,
         agent_id: str,
         to_number: str,
+        twilio_sid: str,
+        twilio_token: str,
         variables: typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> CoreCallResponse:
@@ -109,6 +126,12 @@ class AsyncCallsClient:
 
         to_number : str
             Phone number to call (E.164 format)
+
+        twilio_sid : str
+            Twilio SID
+
+        twilio_token : str
+            Twilio Token
 
         variables : typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]]
             Optional JSON object containing custom variables to pass to the agent during the call
@@ -135,13 +158,20 @@ class AsyncCallsClient:
         async def main() -> None:
             await client.calls.initiate_call(
                 agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-                to_number="+919831222222",
+                to_number="+xxxxxxxxxx",
+                twilio_sid="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                twilio_token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             )
 
 
         asyncio.run(main())
         """
         _response = await self._raw_client.initiate_call(
-            agent_id=agent_id, to_number=to_number, variables=variables, request_options=request_options
+            agent_id=agent_id,
+            to_number=to_number,
+            twilio_sid=twilio_sid,
+            twilio_token=twilio_token,
+            variables=variables,
+            request_options=request_options,
         )
         return _response.data

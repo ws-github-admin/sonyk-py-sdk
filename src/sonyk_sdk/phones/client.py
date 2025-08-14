@@ -166,7 +166,7 @@ class PhonesClient:
             api_key="YOUR_API_KEY",
         )
         client.phones.get_phone(
-            phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+            phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.get_phone(phone_id, request_options=request_options)
@@ -211,7 +211,7 @@ class PhonesClient:
             api_key="YOUR_API_KEY",
         )
         client.phones.update_phone(
-            phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+            phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.update_phone(
@@ -245,7 +245,7 @@ class PhonesClient:
             api_key="YOUR_API_KEY",
         )
         client.phones.delete_phone(
-            phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+            phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.delete_phone(phone_id, request_options=request_options)
@@ -280,7 +280,7 @@ class PhonesClient:
             api_key="YOUR_API_KEY",
         )
         client.phones.map_phone_to_agent(
-            phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+            phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             agent_id="agentId",
         )
         """
@@ -313,7 +313,7 @@ class PhonesClient:
             api_key="YOUR_API_KEY",
         )
         client.phones.unmap_phone_from_agent(
-            phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+            phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.unmap_phone_from_agent(phone_id, request_options=request_options)
@@ -496,7 +496,7 @@ class AsyncPhonesClient:
 
         async def main() -> None:
             await client.phones.get_phone(
-                phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+                phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -549,7 +549,7 @@ class AsyncPhonesClient:
 
         async def main() -> None:
             await client.phones.update_phone(
-                phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+                phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -591,7 +591,7 @@ class AsyncPhonesClient:
 
         async def main() -> None:
             await client.phones.delete_phone(
-                phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+                phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -634,7 +634,7 @@ class AsyncPhonesClient:
 
         async def main() -> None:
             await client.phones.map_phone_to_agent(
-                phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+                phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 agent_id="agentId",
             )
 
@@ -677,7 +677,7 @@ class AsyncPhonesClient:
 
         async def main() -> None:
             await client.phones.unmap_phone_from_agent(
-                phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+                phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 

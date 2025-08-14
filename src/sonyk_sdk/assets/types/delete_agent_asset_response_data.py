@@ -9,7 +9,7 @@ from ...core.serialization import FieldMetadata
 
 
 class DeleteAgentAssetResponseData(UniversalBaseModel):
-    asset_id: typing_extensions.Annotated[typing.Optional[int], FieldMetadata(alias="assetId")] = pydantic.Field(
+    asset_id: typing_extensions.Annotated[typing.Optional[str], FieldMetadata(alias="assetId")] = pydantic.Field(
         default=None
     )
     """

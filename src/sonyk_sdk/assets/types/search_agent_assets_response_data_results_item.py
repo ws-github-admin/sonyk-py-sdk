@@ -15,7 +15,7 @@ class SearchAgentAssetsResponseDataResultsItem(UniversalBaseModel):
     Unique identifier for the text chunk
     """
 
-    fk_asset_id: typing.Optional[int] = pydantic.Field(default=None)
+    fk_asset_id: typing.Optional[str] = pydantic.Field(default=None)
     """
     ID of the asset containing this chunk
     """

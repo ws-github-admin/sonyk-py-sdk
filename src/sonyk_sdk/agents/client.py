@@ -307,7 +307,7 @@ class AgentsClient:
         )
         client.agents.assign_tool_to_agent(
             agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-            tool_id="tool_123abc456def",
+            tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.assign_tool_to_agent(agent_id, tool_id=tool_id, request_options=request_options)
@@ -697,7 +697,7 @@ class AsyncAgentsClient:
         async def main() -> None:
             await client.agents.assign_tool_to_agent(
                 agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-                tool_id="tool_123abc456def",
+                tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 

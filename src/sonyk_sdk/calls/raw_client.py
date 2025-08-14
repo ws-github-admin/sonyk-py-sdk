@@ -27,6 +27,8 @@ class RawCallsClient:
         *,
         agent_id: str,
         to_number: str,
+        twilio_sid: str,
+        twilio_token: str,
         variables: typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> HttpResponse[CoreCallResponse]:
@@ -41,6 +43,12 @@ class RawCallsClient:
 
         to_number : str
             Phone number to call (E.164 format)
+
+        twilio_sid : str
+            Twilio SID
+
+        twilio_token : str
+            Twilio Token
 
         variables : typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]]
             Optional JSON object containing custom variables to pass to the agent during the call
@@ -59,6 +67,8 @@ class RawCallsClient:
             json={
                 "agentId": agent_id,
                 "toNumber": to_number,
+                "twilioSid": twilio_sid,
+                "twilioToken": twilio_token,
                 "variables": variables,
             },
             headers={
@@ -136,6 +146,8 @@ class AsyncRawCallsClient:
         *,
         agent_id: str,
         to_number: str,
+        twilio_sid: str,
+        twilio_token: str,
         variables: typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> AsyncHttpResponse[CoreCallResponse]:
@@ -150,6 +162,12 @@ class AsyncRawCallsClient:
 
         to_number : str
             Phone number to call (E.164 format)
+
+        twilio_sid : str
+            Twilio SID
+
+        twilio_token : str
+            Twilio Token
 
         variables : typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]]
             Optional JSON object containing custom variables to pass to the agent during the call
@@ -168,6 +186,8 @@ class AsyncRawCallsClient:
             json={
                 "agentId": agent_id,
                 "toNumber": to_number,
+                "twilioSid": twilio_sid,
+                "twilioToken": twilio_token,
                 "variables": variables,
             },
             headers={

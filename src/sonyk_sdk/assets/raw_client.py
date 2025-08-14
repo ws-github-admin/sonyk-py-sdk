@@ -145,7 +145,7 @@ class RawAssetsClient:
         raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response_json)
 
     def get_agent_asset_details(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> HttpResponse[AssetDetailedResponse]:
         """
         Retrieve comprehensive information about a specific asset including processing details and content chunks.
@@ -168,7 +168,7 @@ class RawAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -212,7 +212,7 @@ class RawAssetsClient:
     def update_agent_asset(
         self,
         agent_id: str,
-        asset_id: int,
+        asset_id: str,
         *,
         title: typing.Optional[str] = OMIT,
         text: typing.Optional[str] = OMIT,
@@ -242,7 +242,7 @@ class RawAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         title : typing.Optional[str]
             New title for the asset
@@ -304,7 +304,7 @@ class RawAssetsClient:
         raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response_json)
 
     def delete_agent_asset(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> HttpResponse[DeleteAgentAssetResponse]:
         """
         Permanently delete an asset from the agent's knowledge base.
@@ -331,7 +331,7 @@ class RawAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -696,7 +696,7 @@ class RawAssetsClient:
         raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response_json)
 
     def get_agent_asset_content(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> HttpResponse[GetAgentAssetContentResponse]:
         """
         Retrieve the full text content of an asset for review, editing, or developer processing.
@@ -752,7 +752,7 @@ class RawAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -1044,7 +1044,7 @@ class AsyncRawAssetsClient:
         raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response_json)
 
     async def get_agent_asset_details(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> AsyncHttpResponse[AssetDetailedResponse]:
         """
         Retrieve comprehensive information about a specific asset including processing details and content chunks.
@@ -1067,7 +1067,7 @@ class AsyncRawAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -1111,7 +1111,7 @@ class AsyncRawAssetsClient:
     async def update_agent_asset(
         self,
         agent_id: str,
-        asset_id: int,
+        asset_id: str,
         *,
         title: typing.Optional[str] = OMIT,
         text: typing.Optional[str] = OMIT,
@@ -1141,7 +1141,7 @@ class AsyncRawAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         title : typing.Optional[str]
             New title for the asset
@@ -1203,7 +1203,7 @@ class AsyncRawAssetsClient:
         raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response_json)
 
     async def delete_agent_asset(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> AsyncHttpResponse[DeleteAgentAssetResponse]:
         """
         Permanently delete an asset from the agent's knowledge base.
@@ -1230,7 +1230,7 @@ class AsyncRawAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -1595,7 +1595,7 @@ class AsyncRawAssetsClient:
         raise ApiError(status_code=_response.status_code, headers=dict(_response.headers), body=_response_json)
 
     async def get_agent_asset_content(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> AsyncHttpResponse[GetAgentAssetContentResponse]:
         """
         Retrieve the full text content of an asset for review, editing, or developer processing.
@@ -1651,7 +1651,7 @@ class AsyncRawAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.

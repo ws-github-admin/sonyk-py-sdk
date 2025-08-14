@@ -77,7 +77,6 @@ class ToolsClient:
         tool_name: str,
         tool_description: str,
         server_url: str,
-        tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> ToolResponse:
@@ -97,10 +96,6 @@ class ToolsClient:
         server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_headers : typing.Optional[typing.Dict[str, str]]
-            HTTP headers to include with all tool requests.
-            Common headers include Content-Type and Authorization.
 
         parameters : typing.Optional[typing.Sequence[CreateToolParameterRequest]]
             Parameters that the tool accepts. Define all possible parameters
@@ -131,7 +126,6 @@ class ToolsClient:
             tool_name=tool_name,
             tool_description=tool_description,
             server_url=server_url,
-            tool_headers=tool_headers,
             parameters=parameters,
             request_options=request_options,
         )
@@ -174,7 +168,6 @@ class ToolsClient:
         tool_name: str,
         tool_description: str,
         server_url: str,
-        tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> ToolResponse:
@@ -196,10 +189,6 @@ class ToolsClient:
         server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_headers : typing.Optional[typing.Dict[str, str]]
-            HTTP headers to include with all tool requests.
-            Common headers include Content-Type and Authorization.
 
         parameters : typing.Optional[typing.Sequence[CreateToolParameterRequest]]
             Parameters that the tool accepts. Define all possible parameters
@@ -232,7 +221,6 @@ class ToolsClient:
             tool_name=tool_name,
             tool_description=tool_description,
             server_url=server_url,
-            tool_headers=tool_headers,
             parameters=parameters,
             request_options=request_options,
         )
@@ -342,7 +330,6 @@ class AsyncToolsClient:
         tool_name: str,
         tool_description: str,
         server_url: str,
-        tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> ToolResponse:
@@ -362,10 +349,6 @@ class AsyncToolsClient:
         server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_headers : typing.Optional[typing.Dict[str, str]]
-            HTTP headers to include with all tool requests.
-            Common headers include Content-Type and Authorization.
 
         parameters : typing.Optional[typing.Sequence[CreateToolParameterRequest]]
             Parameters that the tool accepts. Define all possible parameters
@@ -404,7 +387,6 @@ class AsyncToolsClient:
             tool_name=tool_name,
             tool_description=tool_description,
             server_url=server_url,
-            tool_headers=tool_headers,
             parameters=parameters,
             request_options=request_options,
         )
@@ -455,7 +437,6 @@ class AsyncToolsClient:
         tool_name: str,
         tool_description: str,
         server_url: str,
-        tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
     ) -> ToolResponse:
@@ -477,10 +458,6 @@ class AsyncToolsClient:
         server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_headers : typing.Optional[typing.Dict[str, str]]
-            HTTP headers to include with all tool requests.
-            Common headers include Content-Type and Authorization.
 
         parameters : typing.Optional[typing.Sequence[CreateToolParameterRequest]]
             Parameters that the tool accepts. Define all possible parameters
@@ -521,7 +498,6 @@ class AsyncToolsClient:
             tool_name=tool_name,
             tool_description=tool_description,
             server_url=server_url,
-            tool_headers=tool_headers,
             parameters=parameters,
             request_options=request_options,
         )

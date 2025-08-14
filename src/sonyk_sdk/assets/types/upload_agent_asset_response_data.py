@@ -10,7 +10,7 @@ from .upload_agent_asset_response_data_processing_info import UploadAgentAssetRe
 
 
 class UploadAgentAssetResponseData(UniversalBaseModel):
-    asset_id: typing_extensions.Annotated[typing.Optional[int], FieldMetadata(alias="assetId")] = pydantic.Field(
+    asset_id: typing_extensions.Annotated[typing.Optional[str], FieldMetadata(alias="assetId")] = pydantic.Field(
         default=None
     )
     """

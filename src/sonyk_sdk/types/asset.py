@@ -9,7 +9,7 @@ from .asset_type import AssetType
 
 
 class Asset(UniversalBaseModel):
-    pk_asset_id: typing.Optional[int] = pydantic.Field(default=None)
+    pk_asset_id: typing.Optional[str] = pydantic.Field(default=None)
     """
     Unique asset identifier
     """

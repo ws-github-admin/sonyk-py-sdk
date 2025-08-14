@@ -515,7 +515,7 @@ client = SonykClient(
 )
 client.agents.assign_tool_to_agent(
     agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-    tool_id="tool_123abc456def",
+    tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -870,7 +870,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.phones.get_phone(
-    phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+    phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -940,7 +940,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.phones.update_phone(
-    phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+    phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -1034,7 +1034,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.phones.delete_phone(
-    phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+    phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -1104,7 +1104,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.phones.map_phone_to_agent(
-    phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+    phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     agent_id="agentId",
 )
 
@@ -1183,7 +1183,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.phones.unmap_phone_from_agent(
-    phone_id="12da7cbd-94a4-4a45-b312-98a5sa1f5124",
+    phone_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -1390,17 +1390,6 @@ This should be a complete, accessible URL that accepts the specified HTTP method
 <dl>
 <dd>
 
-**tool_headers:** `typing.Optional[typing.Dict[str, str]]` 
-
-HTTP headers to include with all tool requests.
-Common headers include Content-Type and Authorization.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
 **parameters:** `typing.Optional[typing.Sequence[CreateToolParameterRequest]]` 
 
 Parameters that the tool accepts. Define all possible parameters
@@ -1581,17 +1570,6 @@ when and how to use the tool. Be specific about the tool's purpose and behavior.
 
 The API endpoint URL that will be called when the agent uses this tool.
 This should be a complete, accessible URL that accepts the specified HTTP method.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**tool_headers:** `typing.Optional[typing.Dict[str, str]]` 
-
-HTTP headers to include with all tool requests.
-Common headers include Content-Type and Authorization.
     
 </dd>
 </dl>
@@ -1867,7 +1845,7 @@ client = SonykClient(
 )
 client.assets.get_agent_asset_details(
     agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-    asset_id=4567,
+    asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -1892,7 +1870,7 @@ client.assets.get_agent_asset_details(
 <dl>
 <dd>
 
-**asset_id:** `int` 
+**asset_id:** `str` 
     
 </dd>
 </dl>
@@ -1963,7 +1941,7 @@ client = SonykClient(
 )
 client.assets.update_agent_asset(
     agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-    asset_id=4569,
+    asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -1988,7 +1966,7 @@ client.assets.update_agent_asset(
 <dl>
 <dd>
 
-**asset_id:** `int` 
+**asset_id:** `str` 
     
 </dd>
 </dl>
@@ -2084,7 +2062,7 @@ client = SonykClient(
 )
 client.assets.delete_agent_asset(
     agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-    asset_id=4369,
+    asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -2109,7 +2087,7 @@ client.assets.delete_agent_asset(
 <dl>
 <dd>
 
-**asset_id:** `int` 
+**asset_id:** `str` 
     
 </dd>
 </dl>
@@ -2567,7 +2545,7 @@ client = SonykClient(
 )
 client.assets.get_agent_asset_content(
     agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-    asset_id=3478,
+    asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -2592,7 +2570,7 @@ client.assets.get_agent_asset_content(
 <dl>
 <dd>
 
-**asset_id:** `int` 
+**asset_id:** `str` 
     
 </dd>
 </dl>
@@ -2822,7 +2800,9 @@ client = SonykClient(
 )
 client.calls.initiate_call(
     agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-    to_number="+919831222222",
+    to_number="+xxxxxxxxxx",
+    twilio_sid="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    twilio_token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 )
 
 ```
@@ -2848,6 +2828,22 @@ client.calls.initiate_call(
 <dd>
 
 **to_number:** `str` — Phone number to call (E.164 format)
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**twilio_sid:** `str` — Twilio SID
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**twilio_token:** `str` — Twilio Token
     
 </dd>
 </dl>

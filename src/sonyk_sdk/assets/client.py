@@ -115,7 +115,7 @@ class AssetsClient:
         return _response.data
 
     def get_agent_asset_details(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> AssetDetailedResponse:
         """
         Retrieve comprehensive information about a specific asset including processing details and content chunks.
@@ -138,7 +138,7 @@ class AssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -157,7 +157,7 @@ class AssetsClient:
         )
         client.assets.get_agent_asset_details(
             agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-            asset_id=4567,
+            asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.get_agent_asset_details(agent_id, asset_id, request_options=request_options)
@@ -166,7 +166,7 @@ class AssetsClient:
     def update_agent_asset(
         self,
         agent_id: str,
-        asset_id: int,
+        asset_id: str,
         *,
         title: typing.Optional[str] = OMIT,
         text: typing.Optional[str] = OMIT,
@@ -196,7 +196,7 @@ class AssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         title : typing.Optional[str]
             New title for the asset
@@ -227,7 +227,7 @@ class AssetsClient:
         )
         client.assets.update_agent_asset(
             agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-            asset_id=4569,
+            asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.update_agent_asset(
@@ -236,7 +236,7 @@ class AssetsClient:
         return _response.data
 
     def delete_agent_asset(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> DeleteAgentAssetResponse:
         """
         Permanently delete an asset from the agent's knowledge base.
@@ -263,7 +263,7 @@ class AssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -282,7 +282,7 @@ class AssetsClient:
         )
         client.assets.delete_agent_asset(
             agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-            asset_id=4369,
+            asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.delete_agent_asset(agent_id, asset_id, request_options=request_options)
@@ -556,7 +556,7 @@ class AssetsClient:
         return _response.data
 
     def get_agent_asset_content(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> GetAgentAssetContentResponse:
         """
         Retrieve the full text content of an asset for review, editing, or developer processing.
@@ -612,7 +612,7 @@ class AssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -631,7 +631,7 @@ class AssetsClient:
         )
         client.assets.get_agent_asset_content(
             agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-            asset_id=3478,
+            asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.get_agent_asset_content(agent_id, asset_id, request_options=request_options)
@@ -863,7 +863,7 @@ class AsyncAssetsClient:
         return _response.data
 
     async def get_agent_asset_details(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> AssetDetailedResponse:
         """
         Retrieve comprehensive information about a specific asset including processing details and content chunks.
@@ -886,7 +886,7 @@ class AsyncAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -910,7 +910,7 @@ class AsyncAssetsClient:
         async def main() -> None:
             await client.assets.get_agent_asset_details(
                 agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-                asset_id=4567,
+                asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -922,7 +922,7 @@ class AsyncAssetsClient:
     async def update_agent_asset(
         self,
         agent_id: str,
-        asset_id: int,
+        asset_id: str,
         *,
         title: typing.Optional[str] = OMIT,
         text: typing.Optional[str] = OMIT,
@@ -952,7 +952,7 @@ class AsyncAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         title : typing.Optional[str]
             New title for the asset
@@ -988,7 +988,7 @@ class AsyncAssetsClient:
         async def main() -> None:
             await client.assets.update_agent_asset(
                 agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-                asset_id=4569,
+                asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -1000,7 +1000,7 @@ class AsyncAssetsClient:
         return _response.data
 
     async def delete_agent_asset(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> DeleteAgentAssetResponse:
         """
         Permanently delete an asset from the agent's knowledge base.
@@ -1027,7 +1027,7 @@ class AsyncAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -1051,7 +1051,7 @@ class AsyncAssetsClient:
         async def main() -> None:
             await client.assets.delete_agent_asset(
                 agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-                asset_id=4369,
+                asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -1344,7 +1344,7 @@ class AsyncAssetsClient:
         return _response.data
 
     async def get_agent_asset_content(
-        self, agent_id: str, asset_id: int, *, request_options: typing.Optional[RequestOptions] = None
+        self, agent_id: str, asset_id: str, *, request_options: typing.Optional[RequestOptions] = None
     ) -> GetAgentAssetContentResponse:
         """
         Retrieve the full text content of an asset for review, editing, or developer processing.
@@ -1400,7 +1400,7 @@ class AsyncAssetsClient:
         ----------
         agent_id : str
 
-        asset_id : int
+        asset_id : str
 
         request_options : typing.Optional[RequestOptions]
             Request-specific configuration.
@@ -1424,7 +1424,7 @@ class AsyncAssetsClient:
         async def main() -> None:
             await client.assets.get_agent_asset_content(
                 agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
-                asset_id=3478,
+                asset_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 

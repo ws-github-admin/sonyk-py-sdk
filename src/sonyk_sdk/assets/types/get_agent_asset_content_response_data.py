@@ -11,7 +11,7 @@ from .get_agent_asset_content_response_data_type import GetAgentAssetContentResp
 
 
 class GetAgentAssetContentResponseData(UniversalBaseModel):
-    asset_id: typing_extensions.Annotated[typing.Optional[int], FieldMetadata(alias="assetId")] = pydantic.Field(
+    asset_id: typing_extensions.Annotated[typing.Optional[str], FieldMetadata(alias="assetId")] = pydantic.Field(
         default=None
     )
     """
