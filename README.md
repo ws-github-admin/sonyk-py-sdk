@@ -36,7 +36,7 @@ client.agents.create_agent(
     agent_json=AgentConfiguration(
         llm=AgentConfigurationLlm_Openai(
             model="gpt-5",
-            system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the Vincenzo Capuano restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
+            system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the  restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
         ),
         stt=AgentConfigurationStt_Deepgram(
             model="nova-3",
@@ -47,7 +47,7 @@ client.agents.create_agent(
             voice_id="sarah",
         ),
         name="Georgia - Restaurant Receptionist",
-        first_message="Hello! Welcome to Vincenzo Capuano restaurant. I'm Georgia, how can I help you today?",
+        first_message="Hello! Welcome to  restaurant. I'm Georgia, how can I help you today?",
     ),
 )
 ```
@@ -78,7 +78,7 @@ async def main() -> None:
         agent_json=AgentConfiguration(
             llm=AgentConfigurationLlm_Openai(
                 model="gpt-5",
-                system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the Vincenzo Capuano restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
+                system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the  restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
             ),
             stt=AgentConfigurationStt_Deepgram(
                 model="nova-3",
@@ -89,7 +89,7 @@ async def main() -> None:
                 voice_id="sarah",
             ),
             name="Georgia - Restaurant Receptionist",
-            first_message="Hello! Welcome to Vincenzo Capuano restaurant. I'm Georgia, how can I help you today?",
+            first_message="Hello! Welcome to  restaurant. I'm Georgia, how can I help you today?",
         ),
     )
 

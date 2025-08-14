@@ -65,7 +65,7 @@ class CallsClient:
             api_key="YOUR_API_KEY",
         )
         client.calls.initiate_call(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             to_number="+919831222222",
         )
         """
@@ -134,7 +134,7 @@ class AsyncCallsClient:
 
         async def main() -> None:
             await client.calls.initiate_call(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 to_number="+919831222222",
             )
 

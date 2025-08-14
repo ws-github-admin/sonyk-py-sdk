@@ -127,7 +127,7 @@ client.agents.create_agent(
     agent_json=AgentConfiguration(
         llm=AgentConfigurationLlm_Openai(
             model="gpt-5",
-            system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the Vincenzo Capuano restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
+            system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the  restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
         ),
         stt=AgentConfigurationStt_Deepgram(
             model="nova-3",
@@ -138,7 +138,7 @@ client.agents.create_agent(
             voice_id="sarah",
         ),
         name="Georgia - Restaurant Receptionist",
-        first_message="Hello! Welcome to Vincenzo Capuano restaurant. I'm Georgia, how can I help you today?",
+        first_message="Hello! Welcome to  restaurant. I'm Georgia, how can I help you today?",
     ),
 )
 
@@ -217,7 +217,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.agents.get_agent(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -288,7 +288,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.agents.update_agent(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -374,7 +374,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.agents.delete_agent(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -444,7 +444,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.agents.get_agent_tools(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -514,7 +514,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.agents.assign_tool_to_agent(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     tool_id="tool_123abc456def",
 )
 
@@ -593,7 +593,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.agents.unassign_tool_from_agent(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     tool_id="toolId",
 )
 
@@ -775,7 +775,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.phones.create_phone(
-    phone_number="+1234567890",
+    phone_number="+xxxxxxxxxx",
     provider="twilio",
 )
 
@@ -1340,8 +1340,7 @@ client = SonykClient(
 client.tools.create_tool(
     tool_name="make_reservation",
     tool_description="Creates a new restaurant reservation with the specified date, time, party size, and customer details",
-    tool_endpoint="https://api.restaurant.com/reservations",
-    tool_method="GET",
+    server_url="https://api.restaurant.com/reservations",
 )
 
 ```
@@ -1380,24 +1379,10 @@ when and how to use the tool. Be specific about the tool's purpose and behavior.
 <dl>
 <dd>
 
-**tool_endpoint:** `str` 
+**server_url:** `str` 
 
 The API endpoint URL that will be called when the agent uses this tool.
 This should be a complete, accessible URL that accepts the specified HTTP method.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**tool_method:** `CreateToolRequestToolMethod` 
-
-HTTP method to use when calling the tool:
-- **GET**: Retrieve information
-- **POST**: Create new resources
-- **PUT**: Update existing resources
-- **DELETE**: Remove resources
     
 </dd>
 </dl>
@@ -1472,7 +1457,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.tools.get_tool(
-    tool_id="1a0e22ab-44g6-4009-915a-567815f5k293",
+    tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -1542,11 +1527,10 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.tools.update_tool(
-    tool_id="1a0e22ab-44g6-4009-915a-567815f5k293",
+    tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     tool_name="make_reservation",
     tool_description="Creates a new restaurant reservation with the specified date, time, party size, and customer details",
-    tool_endpoint="https://api.restaurant.com/reservations",
-    tool_method="GET",
+    server_url="https://api.restaurant.com/reservations",
 )
 
 ```
@@ -1593,24 +1577,10 @@ when and how to use the tool. Be specific about the tool's purpose and behavior.
 <dl>
 <dd>
 
-**tool_endpoint:** `str` 
+**server_url:** `str` 
 
 The API endpoint URL that will be called when the agent uses this tool.
 This should be a complete, accessible URL that accepts the specified HTTP method.
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**tool_method:** `CreateToolRequestToolMethod` 
-
-HTTP method to use when calling the tool:
-- **GET**: Retrieve information
-- **POST**: Create new resources
-- **PUT**: Update existing resources
-- **DELETE**: Remove resources
     
 </dd>
 </dl>
@@ -1685,7 +1655,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.tools.delete_tool(
-    tool_id="1a0e22ab-44g6-4009-915a-567815f5k293",
+    tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -1779,7 +1749,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.assets.list_agent_assets(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     search="product documentation",
 )
 
@@ -1896,7 +1866,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.assets.get_agent_asset_details(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     asset_id=4567,
 )
 
@@ -1992,7 +1962,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.assets.update_agent_asset(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     asset_id=4569,
 )
 
@@ -2113,7 +2083,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.assets.delete_agent_asset(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     asset_id=4369,
 )
 
@@ -2255,7 +2225,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.assets.upload_agent_asset(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
 )
 
 ```
@@ -2440,7 +2410,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.assets.create_agent_text_asset(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     text="# Customer Service FAQ - Updated January 2025\n\n## Business Information\n\n### Q: What are your business hours?\nA: We are open Monday to Friday from 9 AM to 6 PM EST. Weekend support is available via email only.\n\n### Q: Where are you located?\nA: Our headquarters is at 123 Business St, City, State 12345. We also have locations in Chicago and Miami.\n\n## Product Support\n\n### Q: How do I return a product?\nA: Returns are easy! Visit our website's return portal, print a shipping label, and send the item back within 30 days. Refunds are processed within 5-7 business days.\n\n### Q: What's your warranty policy?\nA: All products come with a standard 1-year warranty. Extended warranties up to 3 years are available for purchase.\n\n## Account Management\n\n### Q: How do I reset my password?\nA: Click 'Forgot Password' on the login page, enter your email, and follow the instructions sent to your inbox. The reset link expires in 24 hours.\n\n### Q: Can I change my subscription plan?\nA: Yes! Log into your account, go to Settings > Subscription, and select your new plan. Changes take effect immediately.\n",
 )
 
@@ -2596,7 +2566,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.assets.get_agent_asset_content(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     asset_id=3478,
 )
 
@@ -2743,7 +2713,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.assets.search_agent_assets(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     query="How do I reset my password?",
 )
 
@@ -2851,7 +2821,7 @@ client = SonykClient(
     api_key="YOUR_API_KEY",
 )
 client.calls.initiate_call(
-    agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+    agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     to_number="+919831222222",
 )
 

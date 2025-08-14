@@ -6,7 +6,6 @@ import typing
 import pydantic
 from ..core.pydantic_utilities import IS_PYDANTIC_V2, UniversalBaseModel
 from .tool_parameter import ToolParameter
-from .tool_tool_method import ToolToolMethod
 
 
 class Tool(UniversalBaseModel):
@@ -25,19 +24,9 @@ class Tool(UniversalBaseModel):
     Description of what the tool does
     """
 
-    tool_endpoint: typing.Optional[str] = pydantic.Field(default=None)
+    server_url: typing.Optional[str] = pydantic.Field(default=None)
     """
     API endpoint URL that will be called
-    """
-
-    tool_method: typing.Optional[ToolToolMethod] = pydantic.Field(default=None)
-    """
-    HTTP method for the tool execution
-    """
-
-    tool_headers: typing.Optional[typing.Dict[str, str]] = pydantic.Field(default=None)
-    """
-    HTTP headers to include with requests
     """
 
     parameters: typing.Optional[typing.List[ToolParameter]] = pydantic.Field(default=None)

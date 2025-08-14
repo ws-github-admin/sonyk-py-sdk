@@ -129,7 +129,7 @@ class PhonesClient:
             api_key="YOUR_API_KEY",
         )
         client.phones.create_phone(
-            phone_number="+1234567890",
+            phone_number="+xxxxxxxxxx",
             provider="twilio",
         )
         """
@@ -449,7 +449,7 @@ class AsyncPhonesClient:
 
         async def main() -> None:
             await client.phones.create_phone(
-                phone_number="+1234567890",
+                phone_number="+xxxxxxxxxx",
                 provider="twilio",
             )
 

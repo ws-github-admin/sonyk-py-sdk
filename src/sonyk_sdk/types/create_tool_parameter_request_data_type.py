@@ -2,6 +2,6 @@
 
 import typing
 
-CreateToolParameterRequestParamType = typing.Union[
+CreateToolParameterRequestDataType = typing.Union[
     typing.Literal["string", "integer", "number", "boolean", "array", "object"], typing.Any
 ]

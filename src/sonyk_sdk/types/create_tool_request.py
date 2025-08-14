@@ -5,7 +5,6 @@ import typing
 import pydantic
 from ..core.pydantic_utilities import IS_PYDANTIC_V2, UniversalBaseModel
 from .create_tool_parameter_request import CreateToolParameterRequest
-from .create_tool_request_tool_method import CreateToolRequestToolMethod
 
 
 class CreateToolRequest(UniversalBaseModel):
@@ -21,19 +20,10 @@ class CreateToolRequest(UniversalBaseModel):
     when and how to use the tool. Be specific about the tool's purpose and behavior.
     """
 
-    tool_endpoint: str = pydantic.Field()
+    server_url: str = pydantic.Field()
     """
     The API endpoint URL that will be called when the agent uses this tool.
     This should be a complete, accessible URL that accepts the specified HTTP method.
-    """
-
-    tool_method: CreateToolRequestToolMethod = pydantic.Field()
-    """
-    HTTP method to use when calling the tool:
-    - **GET**: Retrieve information
-    - **POST**: Create new resources
-    - **PUT**: Update existing resources
-    - **DELETE**: Remove resources
     """
 
     tool_headers: typing.Optional[typing.Dict[str, str]] = pydantic.Field(default=None)

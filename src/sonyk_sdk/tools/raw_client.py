@@ -11,7 +11,6 @@ from ..core.pydantic_utilities import parse_obj_as
 from ..core.request_options import RequestOptions
 from ..core.serialization import convert_and_respect_annotation_metadata
 from ..types.create_tool_parameter_request import CreateToolParameterRequest
-from ..types.create_tool_request_tool_method import CreateToolRequestToolMethod
 from ..types.success_response import SuccessResponse
 from ..types.tool_list_response import ToolListResponse
 from ..types.tool_response import ToolResponse
@@ -84,8 +83,7 @@ class RawToolsClient:
         *,
         tool_name: str,
         tool_description: str,
-        tool_endpoint: str,
-        tool_method: CreateToolRequestToolMethod,
+        server_url: str,
         tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -103,16 +101,9 @@ class RawToolsClient:
             Detailed description of what the tool does. The agent uses this to understand
             when and how to use the tool. Be specific about the tool's purpose and behavior.
 
-        tool_endpoint : str
+        server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_method : CreateToolRequestToolMethod
-            HTTP method to use when calling the tool:
-            - **GET**: Retrieve information
-            - **POST**: Create new resources
-            - **PUT**: Update existing resources
-            - **DELETE**: Remove resources
 
         tool_headers : typing.Optional[typing.Dict[str, str]]
             HTTP headers to include with all tool requests.
@@ -136,8 +127,7 @@ class RawToolsClient:
             json={
                 "tool_name": tool_name,
                 "tool_description": tool_description,
-                "tool_endpoint": tool_endpoint,
-                "tool_method": tool_method,
+                "server_url": server_url,
                 "tool_headers": tool_headers,
                 "parameters": convert_and_respect_annotation_metadata(
                     object_=parameters, annotation=typing.Sequence[CreateToolParameterRequest], direction="write"
@@ -208,8 +198,7 @@ class RawToolsClient:
         *,
         tool_name: str,
         tool_description: str,
-        tool_endpoint: str,
-        tool_method: CreateToolRequestToolMethod,
+        server_url: str,
         tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -229,16 +218,9 @@ class RawToolsClient:
             Detailed description of what the tool does. The agent uses this to understand
             when and how to use the tool. Be specific about the tool's purpose and behavior.
 
-        tool_endpoint : str
+        server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_method : CreateToolRequestToolMethod
-            HTTP method to use when calling the tool:
-            - **GET**: Retrieve information
-            - **POST**: Create new resources
-            - **PUT**: Update existing resources
-            - **DELETE**: Remove resources
 
         tool_headers : typing.Optional[typing.Dict[str, str]]
             HTTP headers to include with all tool requests.
@@ -262,8 +244,7 @@ class RawToolsClient:
             json={
                 "tool_name": tool_name,
                 "tool_description": tool_description,
-                "tool_endpoint": tool_endpoint,
-                "tool_method": tool_method,
+                "server_url": server_url,
                 "tool_headers": tool_headers,
                 "parameters": convert_and_respect_annotation_metadata(
                     object_=parameters, annotation=typing.Sequence[CreateToolParameterRequest], direction="write"
@@ -393,8 +374,7 @@ class AsyncRawToolsClient:
         *,
         tool_name: str,
         tool_description: str,
-        tool_endpoint: str,
-        tool_method: CreateToolRequestToolMethod,
+        server_url: str,
         tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -412,16 +392,9 @@ class AsyncRawToolsClient:
             Detailed description of what the tool does. The agent uses this to understand
             when and how to use the tool. Be specific about the tool's purpose and behavior.
 
-        tool_endpoint : str
+        server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_method : CreateToolRequestToolMethod
-            HTTP method to use when calling the tool:
-            - **GET**: Retrieve information
-            - **POST**: Create new resources
-            - **PUT**: Update existing resources
-            - **DELETE**: Remove resources
 
         tool_headers : typing.Optional[typing.Dict[str, str]]
             HTTP headers to include with all tool requests.
@@ -445,8 +418,7 @@ class AsyncRawToolsClient:
             json={
                 "tool_name": tool_name,
                 "tool_description": tool_description,
-                "tool_endpoint": tool_endpoint,
-                "tool_method": tool_method,
+                "server_url": server_url,
                 "tool_headers": tool_headers,
                 "parameters": convert_and_respect_annotation_metadata(
                     object_=parameters, annotation=typing.Sequence[CreateToolParameterRequest], direction="write"
@@ -517,8 +489,7 @@ class AsyncRawToolsClient:
         *,
         tool_name: str,
         tool_description: str,
-        tool_endpoint: str,
-        tool_method: CreateToolRequestToolMethod,
+        server_url: str,
         tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -538,16 +509,9 @@ class AsyncRawToolsClient:
             Detailed description of what the tool does. The agent uses this to understand
             when and how to use the tool. Be specific about the tool's purpose and behavior.
 
-        tool_endpoint : str
+        server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_method : CreateToolRequestToolMethod
-            HTTP method to use when calling the tool:
-            - **GET**: Retrieve information
-            - **POST**: Create new resources
-            - **PUT**: Update existing resources
-            - **DELETE**: Remove resources
 
         tool_headers : typing.Optional[typing.Dict[str, str]]
             HTTP headers to include with all tool requests.
@@ -571,8 +535,7 @@ class AsyncRawToolsClient:
             json={
                 "tool_name": tool_name,
                 "tool_description": tool_description,
-                "tool_endpoint": tool_endpoint,
-                "tool_method": tool_method,
+                "server_url": server_url,
                 "tool_headers": tool_headers,
                 "parameters": convert_and_respect_annotation_metadata(
                     object_=parameters, annotation=typing.Sequence[CreateToolParameterRequest], direction="write"

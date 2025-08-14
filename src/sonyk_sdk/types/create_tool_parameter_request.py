@@ -4,8 +4,7 @@ import typing
 
 import pydantic
 from ..core.pydantic_utilities import IS_PYDANTIC_V2, UniversalBaseModel
-from .create_tool_parameter_request_param_type import CreateToolParameterRequestParamType
-from .create_tool_parameter_request_validation_rules import CreateToolParameterRequestValidationRules
+from .create_tool_parameter_request_data_type import CreateToolParameterRequestDataType
 
 
 class CreateToolParameterRequest(UniversalBaseModel):
@@ -15,7 +14,7 @@ class CreateToolParameterRequest(UniversalBaseModel):
     Use snake_case format (e.g., customer_name, reservation_date).
     """
 
-    param_type: CreateToolParameterRequestParamType = pydantic.Field()
+    data_type: CreateToolParameterRequestDataType = pydantic.Field()
     """
     Data type of the parameter:
     - **string**: Text values
@@ -26,7 +25,7 @@ class CreateToolParameterRequest(UniversalBaseModel):
     - **object**: Complex nested data
     """
 
-    is_required: typing.Optional[bool] = pydantic.Field(default=None)
+    is_mandatory: typing.Optional[bool] = pydantic.Field(default=None)
     """
     Whether this parameter must be provided
     """
@@ -35,12 +34,6 @@ class CreateToolParameterRequest(UniversalBaseModel):
     """
     Clear description of what this parameter represents.
     The agent uses this to understand how to populate the parameter.
-    """
-
-    default_value: typing.Optional[typing.Optional[typing.Any]] = None
-    validation_rules: typing.Optional[CreateToolParameterRequestValidationRules] = pydantic.Field(default=None)
-    """
-    Optional validation rules for the parameter
     """
 
     if IS_PYDANTIC_V2:

@@ -116,7 +116,7 @@ class AgentsClient:
             agent_json=AgentConfiguration(
                 llm=AgentConfigurationLlm_Openai(
                     model="gpt-5",
-                    system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the Vincenzo Capuano restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
+                    system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the  restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
                 ),
                 stt=AgentConfigurationStt_Deepgram(
                     model="nova-3",
@@ -127,7 +127,7 @@ class AgentsClient:
                     voice_id="sarah",
                 ),
                 name="Georgia - Restaurant Receptionist",
-                first_message="Hello! Welcome to Vincenzo Capuano restaurant. I'm Georgia, how can I help you today?",
+                first_message="Hello! Welcome to  restaurant. I'm Georgia, how can I help you today?",
             ),
         )
         """
@@ -163,7 +163,7 @@ class AgentsClient:
             api_key="YOUR_API_KEY",
         )
         client.agents.get_agent(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.get_agent(agent_id, request_options=request_options)
@@ -205,7 +205,7 @@ class AgentsClient:
             api_key="YOUR_API_KEY",
         )
         client.agents.update_agent(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.update_agent(
@@ -239,7 +239,7 @@ class AgentsClient:
             api_key="YOUR_API_KEY",
         )
         client.agents.delete_agent(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.delete_agent(agent_id, request_options=request_options)
@@ -271,7 +271,7 @@ class AgentsClient:
             api_key="YOUR_API_KEY",
         )
         client.agents.get_agent_tools(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.get_agent_tools(agent_id, request_options=request_options)
@@ -306,7 +306,7 @@ class AgentsClient:
             api_key="YOUR_API_KEY",
         )
         client.agents.assign_tool_to_agent(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             tool_id="tool_123abc456def",
         )
         """
@@ -341,7 +341,7 @@ class AgentsClient:
             api_key="YOUR_API_KEY",
         )
         client.agents.unassign_tool_from_agent(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             tool_id="toolId",
         )
         """
@@ -466,7 +466,7 @@ class AsyncAgentsClient:
                 agent_json=AgentConfiguration(
                     llm=AgentConfigurationLlm_Openai(
                         model="gpt-5",
-                        system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the Vincenzo Capuano restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
+                        system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the  restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
                     ),
                     stt=AgentConfigurationStt_Deepgram(
                         model="nova-3",
@@ -477,7 +477,7 @@ class AsyncAgentsClient:
                         voice_id="sarah",
                     ),
                     name="Georgia - Restaurant Receptionist",
-                    first_message="Hello! Welcome to Vincenzo Capuano restaurant. I'm Georgia, how can I help you today?",
+                    first_message="Hello! Welcome to  restaurant. I'm Georgia, how can I help you today?",
                 ),
             )
 
@@ -521,7 +521,7 @@ class AsyncAgentsClient:
 
         async def main() -> None:
             await client.agents.get_agent(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -571,7 +571,7 @@ class AsyncAgentsClient:
 
         async def main() -> None:
             await client.agents.update_agent(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -613,7 +613,7 @@ class AsyncAgentsClient:
 
         async def main() -> None:
             await client.agents.delete_agent(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -653,7 +653,7 @@ class AsyncAgentsClient:
 
         async def main() -> None:
             await client.agents.get_agent_tools(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -696,7 +696,7 @@ class AsyncAgentsClient:
 
         async def main() -> None:
             await client.agents.assign_tool_to_agent(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 tool_id="tool_123abc456def",
             )
 
@@ -741,7 +741,7 @@ class AsyncAgentsClient:
 
         async def main() -> None:
             await client.agents.unassign_tool_from_agent(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 tool_id="toolId",
             )
 

@@ -5,7 +5,6 @@ import typing
 from ..core.client_wrapper import AsyncClientWrapper, SyncClientWrapper
 from ..core.request_options import RequestOptions
 from ..types.create_tool_parameter_request import CreateToolParameterRequest
-from ..types.create_tool_request_tool_method import CreateToolRequestToolMethod
 from ..types.success_response import SuccessResponse
 from ..types.tool_list_response import ToolListResponse
 from ..types.tool_response import ToolResponse
@@ -77,8 +76,7 @@ class ToolsClient:
         *,
         tool_name: str,
         tool_description: str,
-        tool_endpoint: str,
-        tool_method: CreateToolRequestToolMethod,
+        server_url: str,
         tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -96,16 +94,9 @@ class ToolsClient:
             Detailed description of what the tool does. The agent uses this to understand
             when and how to use the tool. Be specific about the tool's purpose and behavior.
 
-        tool_endpoint : str
+        server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_method : CreateToolRequestToolMethod
-            HTTP method to use when calling the tool:
-            - **GET**: Retrieve information
-            - **POST**: Create new resources
-            - **PUT**: Update existing resources
-            - **DELETE**: Remove resources
 
         tool_headers : typing.Optional[typing.Dict[str, str]]
             HTTP headers to include with all tool requests.
@@ -133,15 +124,13 @@ class ToolsClient:
         client.tools.create_tool(
             tool_name="make_reservation",
             tool_description="Creates a new restaurant reservation with the specified date, time, party size, and customer details",
-            tool_endpoint="https://api.restaurant.com/reservations",
-            tool_method="GET",
+            server_url="https://api.restaurant.com/reservations",
         )
         """
         _response = self._raw_client.create_tool(
             tool_name=tool_name,
             tool_description=tool_description,
-            tool_endpoint=tool_endpoint,
-            tool_method=tool_method,
+            server_url=server_url,
             tool_headers=tool_headers,
             parameters=parameters,
             request_options=request_options,
@@ -172,7 +161,7 @@ class ToolsClient:
             api_key="YOUR_API_KEY",
         )
         client.tools.get_tool(
-            tool_id="1a0e22ab-44g6-4009-915a-567815f5k293",
+            tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.get_tool(tool_id, request_options=request_options)
@@ -184,8 +173,7 @@ class ToolsClient:
         *,
         tool_name: str,
         tool_description: str,
-        tool_endpoint: str,
-        tool_method: CreateToolRequestToolMethod,
+        server_url: str,
         tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -205,16 +193,9 @@ class ToolsClient:
             Detailed description of what the tool does. The agent uses this to understand
             when and how to use the tool. Be specific about the tool's purpose and behavior.
 
-        tool_endpoint : str
+        server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_method : CreateToolRequestToolMethod
-            HTTP method to use when calling the tool:
-            - **GET**: Retrieve information
-            - **POST**: Create new resources
-            - **PUT**: Update existing resources
-            - **DELETE**: Remove resources
 
         tool_headers : typing.Optional[typing.Dict[str, str]]
             HTTP headers to include with all tool requests.
@@ -240,19 +221,17 @@ class ToolsClient:
             api_key="YOUR_API_KEY",
         )
         client.tools.update_tool(
-            tool_id="1a0e22ab-44g6-4009-915a-567815f5k293",
+            tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             tool_name="make_reservation",
             tool_description="Creates a new restaurant reservation with the specified date, time, party size, and customer details",
-            tool_endpoint="https://api.restaurant.com/reservations",
-            tool_method="GET",
+            server_url="https://api.restaurant.com/reservations",
         )
         """
         _response = self._raw_client.update_tool(
             tool_id,
             tool_name=tool_name,
             tool_description=tool_description,
-            tool_endpoint=tool_endpoint,
-            tool_method=tool_method,
+            server_url=server_url,
             tool_headers=tool_headers,
             parameters=parameters,
             request_options=request_options,
@@ -283,7 +262,7 @@ class ToolsClient:
             api_key="YOUR_API_KEY",
         )
         client.tools.delete_tool(
-            tool_id="1a0e22ab-44g6-4009-915a-567815f5k293",
+            tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.delete_tool(tool_id, request_options=request_options)
@@ -362,8 +341,7 @@ class AsyncToolsClient:
         *,
         tool_name: str,
         tool_description: str,
-        tool_endpoint: str,
-        tool_method: CreateToolRequestToolMethod,
+        server_url: str,
         tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -381,16 +359,9 @@ class AsyncToolsClient:
             Detailed description of what the tool does. The agent uses this to understand
             when and how to use the tool. Be specific about the tool's purpose and behavior.
 
-        tool_endpoint : str
+        server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_method : CreateToolRequestToolMethod
-            HTTP method to use when calling the tool:
-            - **GET**: Retrieve information
-            - **POST**: Create new resources
-            - **PUT**: Update existing resources
-            - **DELETE**: Remove resources
 
         tool_headers : typing.Optional[typing.Dict[str, str]]
             HTTP headers to include with all tool requests.
@@ -423,8 +394,7 @@ class AsyncToolsClient:
             await client.tools.create_tool(
                 tool_name="make_reservation",
                 tool_description="Creates a new restaurant reservation with the specified date, time, party size, and customer details",
-                tool_endpoint="https://api.restaurant.com/reservations",
-                tool_method="GET",
+                server_url="https://api.restaurant.com/reservations",
             )
 
 
@@ -433,8 +403,7 @@ class AsyncToolsClient:
         _response = await self._raw_client.create_tool(
             tool_name=tool_name,
             tool_description=tool_description,
-            tool_endpoint=tool_endpoint,
-            tool_method=tool_method,
+            server_url=server_url,
             tool_headers=tool_headers,
             parameters=parameters,
             request_options=request_options,
@@ -470,7 +439,7 @@ class AsyncToolsClient:
 
         async def main() -> None:
             await client.tools.get_tool(
-                tool_id="1a0e22ab-44g6-4009-915a-567815f5k293",
+                tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -485,8 +454,7 @@ class AsyncToolsClient:
         *,
         tool_name: str,
         tool_description: str,
-        tool_endpoint: str,
-        tool_method: CreateToolRequestToolMethod,
+        server_url: str,
         tool_headers: typing.Optional[typing.Dict[str, str]] = OMIT,
         parameters: typing.Optional[typing.Sequence[CreateToolParameterRequest]] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -506,16 +474,9 @@ class AsyncToolsClient:
             Detailed description of what the tool does. The agent uses this to understand
             when and how to use the tool. Be specific about the tool's purpose and behavior.
 
-        tool_endpoint : str
+        server_url : str
             The API endpoint URL that will be called when the agent uses this tool.
             This should be a complete, accessible URL that accepts the specified HTTP method.
-
-        tool_method : CreateToolRequestToolMethod
-            HTTP method to use when calling the tool:
-            - **GET**: Retrieve information
-            - **POST**: Create new resources
-            - **PUT**: Update existing resources
-            - **DELETE**: Remove resources
 
         tool_headers : typing.Optional[typing.Dict[str, str]]
             HTTP headers to include with all tool requests.
@@ -546,11 +507,10 @@ class AsyncToolsClient:
 
         async def main() -> None:
             await client.tools.update_tool(
-                tool_id="1a0e22ab-44g6-4009-915a-567815f5k293",
+                tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 tool_name="make_reservation",
                 tool_description="Creates a new restaurant reservation with the specified date, time, party size, and customer details",
-                tool_endpoint="https://api.restaurant.com/reservations",
-                tool_method="GET",
+                server_url="https://api.restaurant.com/reservations",
             )
 
 
@@ -560,8 +520,7 @@ class AsyncToolsClient:
             tool_id,
             tool_name=tool_name,
             tool_description=tool_description,
-            tool_endpoint=tool_endpoint,
-            tool_method=tool_method,
+            server_url=server_url,
             tool_headers=tool_headers,
             parameters=parameters,
             request_options=request_options,
@@ -599,7 +558,7 @@ class AsyncToolsClient:
 
         async def main() -> None:
             await client.tools.delete_tool(
-                tool_id="1a0e22ab-44g6-4009-915a-567815f5k293",
+                tool_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 

@@ -105,7 +105,7 @@ class AssetsClient:
             api_key="YOUR_API_KEY",
         )
         client.assets.list_agent_assets(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             search="product documentation",
         )
         """
@@ -156,7 +156,7 @@ class AssetsClient:
             api_key="YOUR_API_KEY",
         )
         client.assets.get_agent_asset_details(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             asset_id=4567,
         )
         """
@@ -226,7 +226,7 @@ class AssetsClient:
             api_key="YOUR_API_KEY",
         )
         client.assets.update_agent_asset(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             asset_id=4569,
         )
         """
@@ -281,7 +281,7 @@ class AssetsClient:
             api_key="YOUR_API_KEY",
         )
         client.assets.delete_agent_asset(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             asset_id=4369,
         )
         """
@@ -394,7 +394,7 @@ class AssetsClient:
             api_key="YOUR_API_KEY",
         )
         client.assets.upload_agent_asset(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
         )
         """
         _response = self._raw_client.upload_agent_asset(
@@ -546,7 +546,7 @@ class AssetsClient:
             api_key="YOUR_API_KEY",
         )
         client.assets.create_agent_text_asset(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             text="# Customer Service FAQ - Updated January 2025\n\n## Business Information\n\n### Q: What are your business hours?\nA: We are open Monday to Friday from 9 AM to 6 PM EST. Weekend support is available via email only.\n\n### Q: Where are you located?\nA: Our headquarters is at 123 Business St, City, State 12345. We also have locations in Chicago and Miami.\n\n## Product Support\n\n### Q: How do I return a product?\nA: Returns are easy! Visit our website's return portal, print a shipping label, and send the item back within 30 days. Refunds are processed within 5-7 business days.\n\n### Q: What's your warranty policy?\nA: All products come with a standard 1-year warranty. Extended warranties up to 3 years are available for purchase.\n\n## Account Management\n\n### Q: How do I reset my password?\nA: Click 'Forgot Password' on the login page, enter your email, and follow the instructions sent to your inbox. The reset link expires in 24 hours.\n\n### Q: Can I change my subscription plan?\nA: Yes! Log into your account, go to Settings > Subscription, and select your new plan. Changes take effect immediately.\n",
         )
         """
@@ -630,7 +630,7 @@ class AssetsClient:
             api_key="YOUR_API_KEY",
         )
         client.assets.get_agent_asset_content(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             asset_id=3478,
         )
         """
@@ -751,7 +751,7 @@ class AssetsClient:
             api_key="YOUR_API_KEY",
         )
         client.assets.search_agent_assets(
-            agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+            agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             query="How do I reset my password?",
         )
         """
@@ -850,7 +850,7 @@ class AsyncAssetsClient:
 
         async def main() -> None:
             await client.assets.list_agent_assets(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 search="product documentation",
             )
 
@@ -909,7 +909,7 @@ class AsyncAssetsClient:
 
         async def main() -> None:
             await client.assets.get_agent_asset_details(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 asset_id=4567,
             )
 
@@ -987,7 +987,7 @@ class AsyncAssetsClient:
 
         async def main() -> None:
             await client.assets.update_agent_asset(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 asset_id=4569,
             )
 
@@ -1050,7 +1050,7 @@ class AsyncAssetsClient:
 
         async def main() -> None:
             await client.assets.delete_agent_asset(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 asset_id=4369,
             )
 
@@ -1171,7 +1171,7 @@ class AsyncAssetsClient:
 
         async def main() -> None:
             await client.assets.upload_agent_asset(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
             )
 
 
@@ -1331,7 +1331,7 @@ class AsyncAssetsClient:
 
         async def main() -> None:
             await client.assets.create_agent_text_asset(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 text="# Customer Service FAQ - Updated January 2025\n\n## Business Information\n\n### Q: What are your business hours?\nA: We are open Monday to Friday from 9 AM to 6 PM EST. Weekend support is available via email only.\n\n### Q: Where are you located?\nA: Our headquarters is at 123 Business St, City, State 12345. We also have locations in Chicago and Miami.\n\n## Product Support\n\n### Q: How do I return a product?\nA: Returns are easy! Visit our website's return portal, print a shipping label, and send the item back within 30 days. Refunds are processed within 5-7 business days.\n\n### Q: What's your warranty policy?\nA: All products come with a standard 1-year warranty. Extended warranties up to 3 years are available for purchase.\n\n## Account Management\n\n### Q: How do I reset my password?\nA: Click 'Forgot Password' on the login page, enter your email, and follow the instructions sent to your inbox. The reset link expires in 24 hours.\n\n### Q: Can I change my subscription plan?\nA: Yes! Log into your account, go to Settings > Subscription, and select your new plan. Changes take effect immediately.\n",
             )
 
@@ -1423,7 +1423,7 @@ class AsyncAssetsClient:
 
         async def main() -> None:
             await client.assets.get_agent_asset_content(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 asset_id=3478,
             )
 
@@ -1552,7 +1552,7 @@ class AsyncAssetsClient:
 
         async def main() -> None:
             await client.assets.search_agent_assets(
-                agent_id="ec2b396d-58e0-96f8-89af-f35908a8b36",
+                agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
                 query="How do I reset my password?",
             )
 

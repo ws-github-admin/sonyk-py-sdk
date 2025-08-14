@@ -61,10 +61,8 @@ from .core_call_response import CoreCallResponse
 from .core_call_response_data import CoreCallResponseData
 from .core_call_response_data_call_tracking import CoreCallResponseDataCallTracking
 from .create_tool_parameter_request import CreateToolParameterRequest
-from .create_tool_parameter_request_param_type import CreateToolParameterRequestParamType
-from .create_tool_parameter_request_validation_rules import CreateToolParameterRequestValidationRules
+from .create_tool_parameter_request_data_type import CreateToolParameterRequestDataType
 from .create_tool_request import CreateToolRequest
-from .create_tool_request_tool_method import CreateToolRequestToolMethod
 from .deepgram_stt import DeepgramStt
 from .deepgram_stt_model import DeepgramSttModel
 from .eleven_labs_tts import ElevenLabsTts
@@ -112,7 +110,6 @@ from .tool_parameter import ToolParameter
 from .tool_parameter_param_type import ToolParameterParamType
 from .tool_parameter_validation_rules import ToolParameterValidationRules
 from .tool_response import ToolResponse
-from .tool_tool_method import ToolToolMethod
 from .user import User
 from .user_list_response import UserListResponse
 from .user_organizations_response import UserOrganizationsResponse
@@ -178,10 +175,8 @@ __all__ = [
     "CoreCallResponseData",
     "CoreCallResponseDataCallTracking",
     "CreateToolParameterRequest",
-    "CreateToolParameterRequestParamType",
-    "CreateToolParameterRequestValidationRules",
+    "CreateToolParameterRequestDataType",
     "CreateToolRequest",
-    "CreateToolRequestToolMethod",
     "DeepgramStt",
     "DeepgramSttModel",
     "ElevenLabsTts",
@@ -229,7 +224,6 @@ __all__ = [
     "ToolParameterParamType",
     "ToolParameterValidationRules",
     "ToolResponse",
-    "ToolToolMethod",
     "User",
     "UserListResponse",
     "UserOrganizationsResponse",
