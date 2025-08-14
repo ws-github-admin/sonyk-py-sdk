@@ -113,9 +113,9 @@ Create a new AI voice agent with specified configuration
 ```python
 from sonyk_sdk import (
     AgentConfiguration,
-    AgentConfigurationLlm,
-    AgentConfigurationStt,
-    AgentConfigurationTts,
+    AgentConfigurationLlm_Openai,
+    AgentConfigurationStt_Deepgram,
+    AgentConfigurationTts_Elevenlabs,
     SonykClient,
 )
 
@@ -125,19 +125,17 @@ client = SonykClient(
 client.agents.create_agent(
     agent_name="Restaurant Receptionist",
     agent_json=AgentConfiguration(
-        llm=AgentConfigurationLlm(
-            model="gpt-4o-mini",
-            provider="openai",
+        llm=AgentConfigurationLlm_Openai(
+            model="gpt-5",
             system_prompt="# Role\nYou are Georgia, a friendly and professional receptionist at the Vincenzo Capuano restaurant.\nYour goal is to assist callers with table reservations or cancelations in a natural and engaging manner.\n\nRestaurant opening hours: 10 AM to 11 PM daily\nLocation: 24 Park Street\n\n# Tasks\n- Answer questions about the restaurant\n- Make table reservations\n- Cancel existing reservations\n- Provide information about menu and hours\n\n# Guidelines\n- Always be polite and professional\n- Confirm all reservation details\n- If you can't help, politely explain and offer alternatives\n",
         ),
-        stt=AgentConfigurationStt(
+        stt=AgentConfigurationStt_Deepgram(
             model="nova-3",
-            provider="deepgram",
+            language="en",
         ),
-        tts=AgentConfigurationTts(
-            model="Eleven-turbo-v2-5",
-            voice_id="EXAVITQu4vr4xnSDxMaL",
-            provider="elevenlabs",
+        tts=AgentConfigurationTts_Elevenlabs(
+            model="eleven_multilingual_v2",
+            voice_id="sarah",
         ),
         name="Georgia - Restaurant Receptionist",
         first_message="Hello! Welcome to Vincenzo Capuano restaurant. I'm Georgia, how can I help you today?",

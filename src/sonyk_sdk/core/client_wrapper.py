@@ -22,10 +22,10 @@ class BaseClientWrapper:
 
     def get_headers(self) -> typing.Dict[str, str]:
         headers: typing.Dict[str, str] = {
-            "User-Agent": "sonyk_sdk/0.0.8",
+            "User-Agent": "sonyk_sdk/0.0.9",
             "X-Fern-Language": "Python",
             "X-Fern-SDK-Name": "sonyk_sdk",
-            "X-Fern-SDK-Version": "0.0.8",
+            "X-Fern-SDK-Version": "0.0.9",
             **(self.get_custom_headers() or {}),
         }
         headers["X-API-Key"] = self.api_key

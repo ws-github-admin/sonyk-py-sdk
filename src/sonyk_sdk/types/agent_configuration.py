@@ -79,42 +79,6 @@ class AgentConfiguration(UniversalBaseModel):
     - Custom data from tool executions
     """
 
-    end_call_phrases: typing_extensions.Annotated[
-        typing.Optional[typing.List[str]], FieldMetadata(alias="endCallPhrases")
-    ] = pydantic.Field(default=None)
-    """
-    Phrases that will automatically end the call when spoken by the caller.
-    Useful for giving callers control over call termination.
-    """
-
-    max_call_duration: typing_extensions.Annotated[typing.Optional[int], FieldMetadata(alias="maxCallDuration")] = (
-        pydantic.Field(default=None)
-    )
-    """
-    Maximum call duration in seconds to prevent runaway costs:
-    - **300**: 5 minutes (short interactions)
-    - **600**: 10 minutes (recommended for most use cases)
-    - **1800**: 30 minutes (detailed conversations)
-    """
-
-    response_delay: typing_extensions.Annotated[typing.Optional[int], FieldMetadata(alias="responseDelay")] = (
-        pydantic.Field(default=None)
-    )
-    """
-    Delay before agent responds in milliseconds.
-    Adds natural conversation flow:
-    - **200**: Very quick responses
-    - **500**: Natural timing (recommended)
-    - **1000**: More thoughtful responses
-    """
-
-    interruptible: typing.Optional[bool] = pydantic.Field(default=None)
-    """
-    Whether callers can interrupt the agent while it's speaking.
-    - **true**: Natural conversation flow (recommended)
-    - **false**: Agent always finishes speaking first
-    """
-
     call_forward_number: typing_extensions.Annotated[typing.Optional[str], FieldMetadata(alias="callForwardNumber")] = (
         pydantic.Field(default=None)
     )
@@ -123,22 +87,12 @@ class AgentConfiguration(UniversalBaseModel):
     Useful for escalation or human handoff.
     """
 
-    background_sound: typing_extensions.Annotated[typing.Optional[str], FieldMetadata(alias="backgroundSound")] = (
-        pydantic.Field(default=None)
-    )
-    """
-    Optional background sound URL for ambiance.
-    Should be a subtle, looping audio file.
-    """
-
     structured_data_schema: typing_extensions.Annotated[
         typing.Optional[AgentConfigurationStructuredDataSchema], FieldMetadata(alias="structuredDataSchema")
-    ] = None
-    custom_settings: typing_extensions.Annotated[
-        typing.Optional[typing.Dict[str, typing.Optional[typing.Any]]], FieldMetadata(alias="customSettings")
     ] = pydantic.Field(default=None)
     """
-    Additional custom configuration parameters
+    Schema definition for structured data extraction from calls.
+    This defines what data should be captured and returned after each call.
     """
 
     if IS_PYDANTIC_V2:

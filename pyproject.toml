@@ -3,7 +3,7 @@ name = "sonyk_sdk"
 
 [tool.poetry]
 name = "sonyk_sdk"
-version = "0.0.8"
+version = "0.0.9"
 description = ""
 readme = "README.md"
 authors = []

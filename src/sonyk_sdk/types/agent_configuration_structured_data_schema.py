@@ -10,15 +10,39 @@ from .agent_configuration_structured_data_schema_call_type import AgentConfigura
 
 
 class AgentConfigurationStructuredDataSchema(UniversalBaseModel):
-    tags: typing.List[str]
-    call_type: AgentConfigurationStructuredDataSchemaCallType
-    call_summary: str
+    """
+    Schema definition for structured data extraction from calls.
+    This defines what data should be captured and returned after each call.
+    """
+
+    tags: typing.List[str] = pydantic.Field()
+    """
+    Array of tags to categorize the call
+    """
+
+    call_type: AgentConfigurationStructuredDataSchemaCallType = pydantic.Field()
+    """
+    Type/category of the call
+    """
+
+    call_summary: str = pydantic.Field()
+    """
+    Brief summary of the call content
+    """
+
     send_menu_dish_sms: typing_extensions.Annotated[typing.Optional[bool], FieldMetadata(alias="sendMenuDishSMS")] = (
-        None
+        pydantic.Field(default=None)
     )
+    """
+    Whether to send menu/dish information via SMS
+    """
+
     reason_of_call_transfer: typing_extensions.Annotated[
         typing.Optional[str], FieldMetadata(alias="reasonOfCallTransfer")
-    ] = None
+    ] = pydantic.Field(default=None)
+    """
+    Reason if the call was transferred to a human
+    """
 
     if IS_PYDANTIC_V2:
         model_config: typing.ClassVar[pydantic.ConfigDict] = pydantic.ConfigDict(extra="allow", frozen=True)  # type: ignore # Pydantic v2

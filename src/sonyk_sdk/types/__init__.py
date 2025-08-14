@@ -4,21 +4,27 @@
 
 from .agent import Agent
 from .agent_configuration import AgentConfiguration
-from .agent_configuration_llm import AgentConfigurationLlm
-from .agent_configuration_llm_model import AgentConfigurationLlmModel
-from .agent_configuration_llm_provider import AgentConfigurationLlmProvider
+from .agent_configuration_llm import (
+    AgentConfigurationLlm,
+    AgentConfigurationLlm_Anthropic,
+    AgentConfigurationLlm_Groq,
+    AgentConfigurationLlm_Openai,
+)
 from .agent_configuration_structured_data_schema import AgentConfigurationStructuredDataSchema
 from .agent_configuration_structured_data_schema_call_type import AgentConfigurationStructuredDataSchemaCallType
-from .agent_configuration_stt import AgentConfigurationStt
-from .agent_configuration_stt_model import AgentConfigurationSttModel
-from .agent_configuration_stt_provider import AgentConfigurationSttProvider
-from .agent_configuration_tts import AgentConfigurationTts
-from .agent_configuration_tts_model import AgentConfigurationTtsModel
-from .agent_configuration_tts_provider import AgentConfigurationTtsProvider
+from .agent_configuration_stt import AgentConfigurationStt, AgentConfigurationStt_Deepgram
+from .agent_configuration_tts import (
+    AgentConfigurationTts,
+    AgentConfigurationTts_Cartesia,
+    AgentConfigurationTts_Elevenlabs,
+    AgentConfigurationTts_Groq,
+)
 from .agent_detailed import AgentDetailed
 from .agent_detailed_response import AgentDetailedResponse
 from .agent_list_response import AgentListResponse
 from .agent_response import AgentResponse
+from .anthropic_llm import AnthropicLlm
+from .anthropic_llm_model import AnthropicLlmModel
 from .api_key import ApiKey
 from .api_key_created_response import ApiKeyCreatedResponse
 from .api_key_created_response_data import ApiKeyCreatedResponseData
@@ -49,6 +55,8 @@ from .base_response import BaseResponse
 from .call import Call
 from .call_agent import CallAgent
 from .call_call_type import CallCallType
+from .cartesia_tts import CartesiaTts
+from .cartesia_tts_model import CartesiaTtsModel
 from .core_call_response import CoreCallResponse
 from .core_call_response_data import CoreCallResponseData
 from .core_call_response_data_call_tracking import CoreCallResponseDataCallTracking
@@ -57,8 +65,16 @@ from .create_tool_parameter_request_param_type import CreateToolParameterRequest
 from .create_tool_parameter_request_validation_rules import CreateToolParameterRequestValidationRules
 from .create_tool_request import CreateToolRequest
 from .create_tool_request_tool_method import CreateToolRequestToolMethod
+from .deepgram_stt import DeepgramStt
+from .deepgram_stt_model import DeepgramSttModel
+from .eleven_labs_tts import ElevenLabsTts
+from .eleven_labs_tts_model import ElevenLabsTtsModel
 from .error_response import ErrorResponse
 from .error_response_data_item import ErrorResponseDataItem
+from .groq_llm import GroqLlm
+from .groq_llm_model import GroqLlmModel
+from .groq_tts import GroqTts
+from .groq_tts_model import GroqTtsModel
 from .invite_user_response import InviteUserResponse
 from .invite_user_response_data import InviteUserResponseData
 from .invite_user_response_data_organization import InviteUserResponseDataOrganization
@@ -66,6 +82,8 @@ from .login_response import LoginResponse
 from .login_response_data import LoginResponseData
 from .login_response_data_default_organization import LoginResponseDataDefaultOrganization
 from .login_response_data_tokens import LoginResponseDataTokens
+from .open_aillm import OpenAillm
+from .open_aillm_model import OpenAillmModel
 from .organization import Organization
 from .organization_detailed import OrganizationDetailed
 from .organization_detailed_subscription_status import OrganizationDetailedSubscriptionStatus
@@ -107,20 +125,23 @@ __all__ = [
     "Agent",
     "AgentConfiguration",
     "AgentConfigurationLlm",
-    "AgentConfigurationLlmModel",
-    "AgentConfigurationLlmProvider",
+    "AgentConfigurationLlm_Anthropic",
+    "AgentConfigurationLlm_Groq",
+    "AgentConfigurationLlm_Openai",
     "AgentConfigurationStructuredDataSchema",
     "AgentConfigurationStructuredDataSchemaCallType",
     "AgentConfigurationStt",
-    "AgentConfigurationSttModel",
-    "AgentConfigurationSttProvider",
+    "AgentConfigurationStt_Deepgram",
     "AgentConfigurationTts",
-    "AgentConfigurationTtsModel",
-    "AgentConfigurationTtsProvider",
+    "AgentConfigurationTts_Cartesia",
+    "AgentConfigurationTts_Elevenlabs",
+    "AgentConfigurationTts_Groq",
     "AgentDetailed",
     "AgentDetailedResponse",
     "AgentListResponse",
     "AgentResponse",
+    "AnthropicLlm",
+    "AnthropicLlmModel",
     "ApiKey",
     "ApiKeyCreatedResponse",
     "ApiKeyCreatedResponseData",
@@ -151,6 +172,8 @@ __all__ = [
     "Call",
     "CallAgent",
     "CallCallType",
+    "CartesiaTts",
+    "CartesiaTtsModel",
     "CoreCallResponse",
     "CoreCallResponseData",
     "CoreCallResponseDataCallTracking",
@@ -159,8 +182,16 @@ __all__ = [
     "CreateToolParameterRequestValidationRules",
     "CreateToolRequest",
     "CreateToolRequestToolMethod",
+    "DeepgramStt",
+    "DeepgramSttModel",
+    "ElevenLabsTts",
+    "ElevenLabsTtsModel",
     "ErrorResponse",
     "ErrorResponseDataItem",
+    "GroqLlm",
+    "GroqLlmModel",
+    "GroqTts",
+    "GroqTtsModel",
     "InviteUserResponse",
     "InviteUserResponseData",
     "InviteUserResponseDataOrganization",
@@ -168,6 +199,8 @@ __all__ = [
     "LoginResponseData",
     "LoginResponseDataDefaultOrganization",
     "LoginResponseDataTokens",
+    "OpenAillm",
+    "OpenAillmModel",
     "Organization",
     "OrganizationDetailed",
     "OrganizationDetailedSubscriptionStatus",
