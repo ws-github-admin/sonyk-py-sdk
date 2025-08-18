@@ -92,6 +92,8 @@ class PhonesClient:
         *,
         phone_number: str,
         provider: str,
+        twilio_sid: str,
+        twilio_token: str,
         nickname: typing.Optional[str] = OMIT,
         agent_id: typing.Optional[str] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -106,6 +108,12 @@ class PhonesClient:
 
         provider : str
             Phone service provider
+
+        twilio_sid : str
+            Twilio SID
+
+        twilio_token : str
+            Twilio Token
 
         nickname : typing.Optional[str]
             Optional friendly name for the phone
@@ -131,11 +139,15 @@ class PhonesClient:
         client.phones.create_phone(
             phone_number="+xxxxxxxxxx",
             provider="twilio",
+            twilio_sid="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            twilio_token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
         )
         """
         _response = self._raw_client.create_phone(
             phone_number=phone_number,
             provider=provider,
+            twilio_sid=twilio_sid,
+            twilio_token=twilio_token,
             nickname=nickname,
             agent_id=agent_id,
             request_options=request_options,
@@ -407,6 +419,8 @@ class AsyncPhonesClient:
         *,
         phone_number: str,
         provider: str,
+        twilio_sid: str,
+        twilio_token: str,
         nickname: typing.Optional[str] = OMIT,
         agent_id: typing.Optional[str] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -421,6 +435,12 @@ class AsyncPhonesClient:
 
         provider : str
             Phone service provider
+
+        twilio_sid : str
+            Twilio SID
+
+        twilio_token : str
+            Twilio Token
 
         nickname : typing.Optional[str]
             Optional friendly name for the phone
@@ -451,6 +471,8 @@ class AsyncPhonesClient:
             await client.phones.create_phone(
                 phone_number="+xxxxxxxxxx",
                 provider="twilio",
+                twilio_sid="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                twilio_token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             )
 
 
@@ -459,6 +481,8 @@ class AsyncPhonesClient:
         _response = await self._raw_client.create_phone(
             phone_number=phone_number,
             provider=provider,
+            twilio_sid=twilio_sid,
+            twilio_token=twilio_token,
             nickname=nickname,
             agent_id=agent_id,
             request_options=request_options,

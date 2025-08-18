@@ -91,6 +91,8 @@ class RawPhonesClient:
         *,
         phone_number: str,
         provider: str,
+        twilio_sid: str,
+        twilio_token: str,
         nickname: typing.Optional[str] = OMIT,
         agent_id: typing.Optional[str] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -105,6 +107,12 @@ class RawPhonesClient:
 
         provider : str
             Phone service provider
+
+        twilio_sid : str
+            Twilio SID
+
+        twilio_token : str
+            Twilio Token
 
         nickname : typing.Optional[str]
             Optional friendly name for the phone
@@ -126,6 +134,8 @@ class RawPhonesClient:
             json={
                 "phoneNumber": phone_number,
                 "provider": provider,
+                "twilioSid": twilio_sid,
+                "twilioToken": twilio_token,
                 "nickname": nickname,
                 "agentId": agent_id,
             },
@@ -447,6 +457,8 @@ class AsyncRawPhonesClient:
         *,
         phone_number: str,
         provider: str,
+        twilio_sid: str,
+        twilio_token: str,
         nickname: typing.Optional[str] = OMIT,
         agent_id: typing.Optional[str] = OMIT,
         request_options: typing.Optional[RequestOptions] = None,
@@ -461,6 +473,12 @@ class AsyncRawPhonesClient:
 
         provider : str
             Phone service provider
+
+        twilio_sid : str
+            Twilio SID
+
+        twilio_token : str
+            Twilio Token
 
         nickname : typing.Optional[str]
             Optional friendly name for the phone
@@ -482,6 +500,8 @@ class AsyncRawPhonesClient:
             json={
                 "phoneNumber": phone_number,
                 "provider": provider,
+                "twilioSid": twilio_sid,
+                "twilioToken": twilio_token,
                 "nickname": nickname,
                 "agentId": agent_id,
             },

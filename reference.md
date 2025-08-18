@@ -777,6 +777,8 @@ client = SonykClient(
 client.phones.create_phone(
     phone_number="+xxxxxxxxxx",
     provider="twilio",
+    twilio_sid="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    twilio_token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 )
 
 ```
@@ -802,6 +804,22 @@ client.phones.create_phone(
 <dd>
 
 **provider:** `str` — Phone service provider
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**twilio_sid:** `str` — Twilio SID
+    
+</dd>
+</dl>
+
+<dl>
+<dd>
+
+**twilio_token:** `str` — Twilio Token
     
 </dd>
 </dl>
@@ -2801,8 +2819,6 @@ client = SonykClient(
 client.calls.initiate_call(
     agent_id="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
     to_number="+xxxxxxxxxx",
-    twilio_sid="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    twilio_token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 )
 
 ```
@@ -2828,22 +2844,6 @@ client.calls.initiate_call(
 <dd>
 
 **to_number:** `str` — Phone number to call (E.164 format)
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**twilio_sid:** `str` — Twilio SID
-    
-</dd>
-</dl>
-
-<dl>
-<dd>
-
-**twilio_token:** `str` — Twilio Token
     
 </dd>
 </dl>
